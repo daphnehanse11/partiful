@@ -5,18 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎉 ROOF PARTY 🎉 COME HANG ON MY ROOF 🎉</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap');
+        
         * {
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="28" font-size="28">🎉</text></svg>'), auto;
         }
         
         body {
-            font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
-            background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+            font-family: 'Kalam', "Comic Sans MS", "Comic Sans", "Chalkboard SE", "Marker Felt", cursive, sans-serif;
+            background: linear-gradient(124deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6ab04c, #c44569);
             background-size: 1800% 1800%;
-            animation: rainbow 18s ease infinite;
+            animation: rainbow 25s ease infinite;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             overflow-x: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 15px;
+                border-width: 4px;
+            }
+            
+            .roof-pics {
+                gap: 10px;
+            }
+            
+            .marquee {
+                font-size: 14px;
+            }
+            
+            .guestbook textarea {
+                font-size: 14px;
+            }
+            
+            .construction img {
+                width: 60px !important;
+            }
+            
+            .award {
+                font-size: 14px;
+            }
+            
+            .table-layout {
+                padding: 10px;
+                border-width: 5px;
+            }
         }
         
         @keyframes rainbow {
@@ -28,41 +66,35 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255, 255, 0, 0.9);
-            border: 10px ridge #ff00ff;
-            padding: 30px;
-            box-shadow: 0 0 50px rgba(255, 0, 255, 0.8);
+            background: rgba(255, 255, 224, 0.95);
+            border: 6px ridge #ff00ff;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
         }
         
         h1 {
-            font-size: 72px;
+            font-size: clamp(36px, 8vw, 64px);
             color: #ff00ff;
             text-align: center;
-            text-shadow: 5px 5px 0px #00ffff, 10px 10px 0px #ffff00;
-            animation: shake 0.5s infinite;
+            text-shadow: 3px 3px 0px #00ffff;
+            animation: shake 2s infinite;
             margin: 20px 0;
+            line-height: 1.2;
         }
         
         @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px) rotate(-1deg); }
+            75% { transform: translateX(2px) rotate(1deg); }
         }
         
         .blink {
-            animation: blink 1s linear infinite;
-            font-size: 36px;
+            animation: blink 2s linear infinite;
+            font-size: clamp(20px, 4vw, 32px);
             color: #ff0000;
             text-align: center;
             font-weight: bold;
+            padding: 10px;
         }
         
         @keyframes blink {
@@ -82,10 +114,11 @@
         .marquee-content {
             display: inline-block;
             padding-left: 100%;
-            animation: marquee 15s linear infinite;
-            font-size: 24px;
+            animation: marquee 20s linear infinite;
+            font-size: clamp(16px, 3vw, 24px);
             color: #0000ff;
             font-weight: bold;
+            white-space: nowrap;
         }
         
         @keyframes marquee {
@@ -102,12 +135,14 @@
         }
         
         .roof-pic {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            aspect-ratio: 3/2;
             object-fit: cover;
-            border: 8px solid;
-            animation: borderColor 2s linear infinite, spin 10s linear infinite;
-            box-shadow: 0 0 30px rgba(255, 0, 255, 1);
+            border: 5px solid;
+            animation: borderColor 3s linear infinite, gentle-pulse 4s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
         }
         
         @keyframes borderColor {
@@ -118,26 +153,23 @@
             100% { border-color: #ff0000; }
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg) scale(1); }
-            25% { transform: rotate(5deg) scale(1.1); }
-            50% { transform: rotate(0deg) scale(1); }
-            75% { transform: rotate(-5deg) scale(1.1); }
-            100% { transform: rotate(0deg) scale(1); }
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
         .party-info {
-            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background: linear-gradient(45deg, #ffb3ff, #b3ffff, #ffffb3, #ffb3ff);
             background-size: 400% 400%;
-            animation: gradientShift 3s ease infinite;
+            animation: gradientShift 6s ease infinite;
             padding: 20px;
             border-radius: 20px;
             margin: 20px 0;
-            font-size: 24px;
+            font-size: clamp(18px, 3vw, 24px);
             text-align: center;
             color: #000;
             font-weight: bold;
-            border: 5px dashed #000;
+            border: 3px dashed #000;
         }
         
         @keyframes gradientShift {
@@ -164,15 +196,16 @@
         }
         
         .dancing-text {
-            font-size: 48px;
+            font-size: clamp(28px, 5vw, 42px);
             text-align: center;
-            margin: 30px 0;
-            background: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            margin: 20px 0;
+            padding: 0 10px;
+            background: linear-gradient(270deg, #ff6b6b, #ffa500, #ffd700, #90ee90, #87ceeb, #9370db, #ff69b4);
             background-size: 1400% 1400%;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: rainbow 2s ease infinite;
+            animation: rainbow 4s ease infinite;
             font-weight: bold;
         }
         
@@ -206,8 +239,8 @@
         }
         
         .flames {
-            font-size: 50px;
-            animation: flame 0.5s ease-in-out infinite alternate;
+            font-size: clamp(30px, 5vw, 45px);
+            animation: flame 1s ease-in-out infinite alternate;
         }
         
         @keyframes flame {
@@ -268,18 +301,14 @@
         }
         
         .neon-text {
-            font-size: 36px;
+            font-size: clamp(24px, 4vw, 32px);
             color: #fff;
             text-shadow: 
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #fff,
-                0 0 42px #ff00ff,
-                0 0 82px #ff00ff,
-                0 0 92px #ff00ff,
-                0 0 102px #ff00ff,
-                0 0 151px #ff00ff;
-            animation: flicker 1.5s infinite alternate;
+                0 0 5px #fff,
+                0 0 10px #ff00ff,
+                0 0 20px #ff00ff,
+                0 0 30px #ff00ff;
+            animation: flicker 3s infinite alternate;
         }
         
         @keyframes flicker {
@@ -405,26 +434,9 @@
             }, 5000);
         }
         
-        setInterval(createSparkle, 300);
+        setInterval(createSparkle, 800);
         
-        // Alert on load because why not
-        window.onload = function() {
-            setTimeout(() => {
-                if (Math.random() > 0.7) {
-                    alert('🎉 WELCOME TO THE ROOF PARTY!!! 🎉\n\nHOPE YOU BROUGHT SNACKS!!!');
-                }
-            }, 1000);
-        };
-        
-        // Random color changes
-        setInterval(() => {
-            const elements = document.querySelectorAll('h1, .dancing-text');
-            elements.forEach(el => {
-                if (Math.random() > 0.8) {
-                    el.style.transform = `scale(${1 + Math.random() * 0.2}) rotate(${Math.random() * 10 - 5}deg)`;
-                }
-            });
-        }, 2000);
+        // No more annoying alerts!
         
         // Console party
         console.log('%c🎉 YOU FOUND THE SECRET CONSOLE PARTY!!! 🎉', 'font-size: 30px; color: #ff00ff; text-shadow: 2px 2px #00ffff;');
