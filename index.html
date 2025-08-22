@@ -311,6 +311,11 @@
             animation: flicker 3s infinite alternate;
         }
         
+        @keyframes flash {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
         @keyframes flicker {
             0%, 18%, 22%, 25%, 53%, 57%, 100% {
                 text-shadow:
@@ -333,10 +338,8 @@
     <div class="sparkles" id="sparkles"></div>
     
     <div class="container">
-        <div class="construction">
-            <img src="https://web.archive.org/web/20090830042547/http://geocities.com/SoHo/7373/construction.gif" alt="Under Construction" style="width: 100px;">
-            <img src="https://web.archive.org/web/20090830042547/http://geocities.com/SoHo/7373/construction.gif" alt="Under Construction" style="width: 100px;">
-            <img src="https://web.archive.org/web/20090830042547/http://geocities.com/SoHo/7373/construction.gif" alt="Under Construction" style="width: 100px;">
+        <div class="construction" style="text-align: center; font-size: clamp(20px, 4vw, 40px); animation: flash 1s infinite; margin: 10px 0;">
+            🚧 🏗️ UNDER CONSTRUCTION 🏗️ 🚧
         </div>
         
         <h1>🎉 ROOF PARTY 🎉</h1>
@@ -407,8 +410,9 @@
             <p>[ <a href="#">← PREVIOUS ROOF</a> | <a href="#">ROOF PARTY WEBRING</a> | <a href="#">NEXT ROOF →</a> ]</p>
             <p>This site is part of the EPIC ROOFS WEBRING</p>
             <p>Best viewed in Netscape Navigator 3.0 at 800x600</p>
-            <img src="https://web.archive.org/web/20090830193949im_/http://www.geocities.com/SiliconValley/Bay/6219/netscape.gif" alt="Netscape Now" style="width: 88px; height: 31px;">
-            <img src="https://web.archive.org/web/20091027110112im_/http://geocities.com/heartland/prairie/3907/ielogo.gif" alt="Internet Explorer" style="width: 88px; height: 31px;">
+            <span style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); padding: 5px 10px; color: white; font-weight: bold; margin: 0 5px;">NETSCAPE 3.0+</span>
+            <span style="background: linear-gradient(45deg, #4ecdc4, #45b7d1); padding: 5px 10px; color: white; font-weight: bold; margin: 0 5px;">IE 4.0+</span>
+            <span style="background: linear-gradient(45deg, #45b7d1, #f9ca24); padding: 5px 10px; color: white; font-weight: bold; margin: 0 5px;">BEST IN 800x600</span>
         </div>
         
         <center>
